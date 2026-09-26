@@ -1,19 +1,30 @@
 package Pilares_poo;
+import java.util.Scanner;
 
 public class ComputadorGeo {
     static void main() {
-        MSNMessenger msnMessenger = new MSNMessenger();
-        msnMessenger.enviarMensagem();
-        msnMessenger.receberMensagem();
+
+        Scanner input = new Scanner(System.in);
+
+        SistemaMensagem smi = null;
 
 
-        Telegram telegram = new Telegram();
-        telegram.enviarMensagem();
-        telegram.receberMensagem();
+        System.out.print("Escolha o aplicativo de mensagem (MSN, Facebook, Telegram): ");
+        String appEscolhido = input.nextLine();
 
-        FacebookMessenger facebookMessenger = new FacebookMessenger();
-        facebookMessenger.enviarMensagem();
-        facebookMessenger.receberMensagem();
+        if (appEscolhido.equals("MSN")) {
+            smi = new MSNMessenger();
+        } else if (appEscolhido.equals("Facebook")) {
+            smi = new FacebookMessenger();
+        } else if (appEscolhido.equals("Telegram")) {
+            smi = new Telegram();
+        } else {
+            System.out.println("Aplicativo de mensagem não reconhecido.");
+            return;
+        }
+
+        smi.enviarMensagem();
+        smi.receberMensagem();
 
 
     }
