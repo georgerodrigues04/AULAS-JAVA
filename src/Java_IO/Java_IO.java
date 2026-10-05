@@ -7,7 +7,7 @@ public class Java_IO {
     public  static  void main(String[] args) {
 
         File direitorio = new File("c:\\Users\\User\\Documentss\\Java");
-        System.out.println(direitorio.exists()? "Diretorio existe" : "Diretorio não existe");
+        System.out.println(direitorio.exists()? "Diretorio existe" : "Diretorio não existase");
         if(!direitorio.exists()){
             direitorio.mkdir();
             System.out.println("Criando diretorio");
